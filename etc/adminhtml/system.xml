@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Define the tab where the module will be displayed -->
+        <tab id="LetscmsBuyNowBtn" translate="label" sortOrder="10">
+            <label>Letscms Buy Now Button</label>
+        </tab>
+        
+        <!-- Define the section under the tab -->
+        <section id="LetscmsBuyNowBtn_General" translate="label" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="0">
+            <class>separator-top</class>
+            <label>Buy Now</label>
+            <tab>LetscmsBuyNowBtn</tab>
+            <resource>Letscms_BuyNowBtn::config</resource>
+            
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                
+                <!-- Enable Button -->
+                <field id="enable_status" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                
+                <!-- Hide Add to Cart on Catalog Page -->
+                <field id="hide_add_to_cart" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Hide Add to Cart On Catalog Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                
+                <!-- Show Buy Now Button on Catalog Page -->
+                <field id="hide_Buy_Now_btn" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Buy Now Button On Catalog Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                
+                <!-- Button Title -->
+                <field id="button_title" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Button Title</label>
+                </field>
+                
+                <!-- Button Background Color -->
+                <field id="Button_Bg" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Button Background Color</label>
+                    <frontend_model>Letscms\BuyNowBtn\Block\Colorpicker</frontend_model>
+                </field>
+                
+                <!-- Button Text Color -->
+                <field id="Button_Color" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Button Text Color</label>
+                    <frontend_model>Letscms\BuyNowBtn\Block\Colorpicker</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

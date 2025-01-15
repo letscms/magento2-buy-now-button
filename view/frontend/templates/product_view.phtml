@@ -1,0 +1,44 @@
+<?php 
+$buttondata   = $block->getConfigData();
+if ($buttondata['enable_status'] != 0 && !is_null($buttondata['enable_status'])) {
+$productid = $this->getRequest()->getParam('id'); 
+?>
+<style>
+    .actions{
+    display: flex !important;
+ }
+.BuyNowBtn{
+    margin: 0px 19px !important;
+    background: <?php echo $buttondata['Button_Bg'] ? $buttondata['Button_Bg'] : '#1979c3'; ?>;
+    border: 1px solid <?php echo $buttondata['Button_Bg'] ? $buttondata['Button_Bg'] : '#1979c3';  ?>;
+    color: <?php echo $buttondata['Button_Color'] ? $buttondata['Button_Color'] : '#ffff'; ?>;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    vertical-align: middle;       
+}
+.BuyNowBtn:hover{
+    background: <?php echo $buttondata['Button_Bg'] ? $buttondata['Button_Bg'] : '#1979c3'; ?>;
+    border: 1px solid <?php echo $buttondata['Button_Bg'] ? $buttondata['Button_Bg'] : '#1979c3';  ?>;
+    color: <?php echo $buttondata['Button_Color'] ? $buttondata['Button_Color'] : '#ffff'; ?>;
+}
+@media only screen and (max-width: 768px) {
+    .abs-button-responsive-smaller, .product-info-main .box-tocart .actions .action.tocart {
+        width: 40%;
+    }
+}
+</style>
+
+<button type="button" id="custom-buy-now-button"
+class="primary BuyNowBtn"
+        onclick="location.href='<?php echo $block->getBuyNowUrl() . '?product_id=' . $productid; ?>'" >
+    Buy Now  
+</button>
+
+<?php }
+
+?>

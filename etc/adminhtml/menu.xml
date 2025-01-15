@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Letscms_BuyNowBtn::BuyNowBtn_menu" 
+        title="Buy Now Button" 
+        module="Letscms_BuyNowBtn" 
+        sortOrder="51"
+         resource="Letscms_BuyNowBtn::BuyNowBtn_menu"
+         />
+         <add 
+            parent="Letscms_BuyNowBtn::BuyNowBtn_menu"
+            id="Letscms_BuyNowBtn::BuyNowBtn_Submenu"
+            title="Configuration"
+            module="Letscms_BuyNowBtn"
+            sortOrder="10"
+            action="adminhtml/system_config/edit/section/Letscms_BuyNowBtn"
+            resource="Letscms_BuyNowBtn::BuyNowBtn_Submenu"
+        />      
+        </menu>
+</config>
